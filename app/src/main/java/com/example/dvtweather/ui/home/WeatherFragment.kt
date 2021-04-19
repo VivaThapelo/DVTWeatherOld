@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.dvtweather.R
 
-class HomeFragment : Fragment() {
+class WeatherFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var weatherViewModel: WeatherViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
+        weatherViewModel =
+                ViewModelProvider(this).get(WeatherViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        weatherViewModel.weather.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

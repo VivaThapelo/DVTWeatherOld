@@ -1,4 +1,7 @@
 package com.example.dvtweather
 
-class Weather {
+import android.location.Location
+
+class Weather(val location: Location,val min: Int,val max: Int,val current: Int, val type: String, val forecast: Forecast) {
+
 }
