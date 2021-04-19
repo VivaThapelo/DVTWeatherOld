@@ -24,7 +24,7 @@ class WeatherFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         weatherViewModel.weather.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+           // textView.text = it
         })
         return root
     }
